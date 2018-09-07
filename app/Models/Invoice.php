@@ -26,8 +26,7 @@ class Invoice extends Model
         'due_at',
     ];
 
-    public function getLinesAttribute($value)
-    {
-        return json_decode($value, true);
-    }
+    protected $casts = [
+        'lines' => 'array',
+    ];
 }

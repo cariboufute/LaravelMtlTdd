@@ -35,10 +35,7 @@ class InvoiceTest extends TestCase
             ],
         ];
 
-        $lineString = json_encode($lines);
-        DB::table('invoices')->insert([
-            'lines' => $lineString
-        ]);
+        Invoice::create(['lines' => $lines]);
 
         $invoice = $this->invoice->first();
 
